@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>图库</title>
+      <link href="/2023/07/01/gallery/"/>
+      <url>/2023/07/01/gallery/</url>
+      
+        <content type="html"><![CDATA[<p><img src="/image/img000.jpg" class="lazyload" data-srcset="/image/img000.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p><p>上海白玉兰广场</p><p><img src="/image/img001.jpg" class="lazyload" data-srcset="/image/img001.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p><p>电脑背景</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 图库 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 图库 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Typora 设置字体颜色</title>
+      <link href="/2023/07/01/typora-setting-typeface-color/"/>
+      <url>/2023/07/01/typora-setting-typeface-color/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Typora-设置字体颜色"><a href="#Typora-设置字体颜色" class="headerlink" title="Typora 设置字体颜色"></a>Typora 设置字体颜色</h1><p><strong>Typora</strong> 没有直接设置字体颜色的功能，不能像word一样，选中字体直接设置想要的颜色。</p><p><font color='red'>Typora</font>工具中设置字体颜色的方案。</p><p>下面需安装软件<font color='orange'>AutoHotKey</font>，操作起来比较简单，建议新手使用；</p><h2 id="1、AutoHotKey（较简单）"><a href="#1、AutoHotKey（较简单）" class="headerlink" title="1、AutoHotKey（较简单）"></a>1、AutoHotKey（较简单）</h2><p><font color='orange'>AutoHotKey</font>是一款著名的<font color='cornflowerblue'>windows</font>系统快捷键设置的软件，轻便小巧。</p><p>官方下载地址： <a href="https://autohotkey.com/download/ahk-install.exe">https://autohotkey.com/download/ahk-install.exe</a></p><p>使用步骤如下：</p><h3 id="先安装AutoHotKey"><a href="#先安装AutoHotKey" class="headerlink" title="先安装AutoHotKey"></a>先安装AutoHotKey</h3><h3 id="打开记事本，把下面的内容复制粘贴进去："><a href="#打开记事本，把下面的内容复制粘贴进去：" class="headerlink" title="打开记事本，把下面的内容复制粘贴进去："></a>打开记事本，把下面的内容复制粘贴进去：</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">; Typora</span><br><span class="line">; 快捷增加字体颜色</span><br><span class="line">; SendInput &#123;Text&#125; 解决中文输入法问题</span><br><span class="line"> </span><br><span class="line">#IfWinActive ahk_exe Typora.exe</span><br><span class="line">&#123;</span><br><span class="line">    ; Ctrl+Alt+R 红色</span><br><span class="line">    ^!r::addFontColor(<span class="string">&quot;red&quot;</span>)</span><br><span class="line"></span><br><span class="line">; Ctrl+Alt+O 橙色</span><br><span class="line">    ^!o::addFontColor(<span class="string">&quot;orange&quot;</span>)</span><br><span class="line"> </span><br><span class="line">    ; Ctrl+Alt+B 浅蓝色</span><br><span class="line">    ^!b::addFontColor(<span class="string">&quot;cornflowerblue&quot;</span>)</span><br><span class="line"></span><br><span class="line">; Ctrl+Alt+G 绿色</span><br><span class="line">^!g::addFontColor(<span class="string">&quot;green&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">; 快捷增加字体颜色</span><br><span class="line">addFontColor(color)&#123;</span><br><span class="line">    clipboard := <span class="string">&quot;&quot;</span> ; 清空剪切板</span><br><span class="line">    Send &#123;ctrl down&#125;c&#123;ctrl up&#125; ; 复制 </span><br><span class="line">    SendInput &#123;TEXT&#125;&lt;font color=<span class="string">&#x27;%color%&#x27;</span>&gt;</span><br><span class="line">    SendInput &#123;ctrl down&#125;v&#123;ctrl up&#125; ; 粘贴</span><br><span class="line">    If(clipboard = <span class="string">&quot;&quot;</span>)&#123;</span><br><span class="line">        SendInput &#123;TEXT&#125;&lt;/font&gt; ; Typora 在这不会自动补充</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        SendInput &#123;TEXT&#125;&lt;/ ; Typora中自动补全标签</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="将文件保存为ahk后缀的文件，如AutoHotKey-ahk"><a href="#将文件保存为ahk后缀的文件，如AutoHotKey-ahk" class="headerlink" title="将文件保存为ahk后缀的文件，如AutoHotKey.ahk"></a>将文件保存为ahk后缀的文件，如<font color='cornflowerblue'>AutoHotKey.ahk</font></h3><h3 id="双击运行"><a href="#双击运行" class="headerlink" title="双击运行"></a>双击运行</h3><h3 id="在Typora软件里就可以使用快捷键进行想要的修改操作了（想要更多的快捷键设置方式，可以在AutoHotKey-ahk文件中自行添加）："><a href="#在Typora软件里就可以使用快捷键进行想要的修改操作了（想要更多的快捷键设置方式，可以在AutoHotKey-ahk文件中自行添加）：" class="headerlink" title="在Typora软件里就可以使用快捷键进行想要的修改操作了（想要更多的快捷键设置方式，可以在AutoHotKey.ahk文件中自行添加）："></a>在Typora软件里就可以使用快捷键进行想要的修改操作了（想要更多的快捷键设置方式，可以在AutoHotKey.ahk文件中自行添加）：</h3><p><font color='red'>如按 Ctrl+Alt+O 添加橙色， Ctrl+Alt+R 红色，按 Ctrl+\ 取消样式！</font></p><p>也可以右键 AutoHotKey.ahk 脚本文件，点击Compile Script编译脚本成exe程序，就可以不用下载Autohotkey在其他电脑上运行了。</p><p>提示：上面脚本只写了橙色、红色、浅蓝三种颜色，你可以按需照例增加其他颜色或快捷方式！</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Typora </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Typora </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
+</search>
